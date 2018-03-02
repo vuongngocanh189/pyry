@@ -1,0 +1,29 @@
+{% extends 'layout/master.twig' %}
+{% block title %}{{ cal|upper }} | {{ level|upper }} - Pyry Calculation Test{% endblock %}
+{% block content %}
+	<div class="container">
+		<div class="jumbotron" id="calculation">
+				<p class="level hide">{{ level }}</p>
+				<p class="cal hide">{{ cal }}</p>
+					<ul id="cal-list center">
+					  <li></li>
+					  <li></li>
+					  <li></li>
+					  <li></li>
+					  <li></li>
+					</ul>
+					<button id="check" class="btn btn-large btn-success"><i class="fas fa-check"></i> CHECK</button>
+					<button id="new" class="btn btn-large btn-info"><i class="fas fa-plus"></i> NEW</button>
+					<button id="home" class="btn tbn-large btn-danger"><i class="fas fa-home"></i> RETURN HOME</a>
+		</div>
+	</div>
+{% endblock %}
+{% block js %}
+	<script src="{{ base_url() }}/js/first.js"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+	<script type="text/javascript">
+		$("#home").click(function() {
+			window.location.href = "{{ base_url() }}";
+		});
+	</script>
+{% endblock %}

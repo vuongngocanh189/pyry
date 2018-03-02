@@ -1,0 +1,95 @@
+.btn{
+	width: 100%;
+}
+h2{
+	margin: 20px 0;
+	font-family: Montserrat;
+}
+#check, #new, #home{
+	font-family: Montserrat;
+}
+ul{
+	list-style-type: none;
+}
+ul li{
+	font-family: Lato;
+	font-weight: 300;
+}
+span, input{
+	border: 1px solid #555;
+	border-radius: 5px;
+	padding: 10px;
+	margin: 5px 10px;
+	background-color: #fafafa;
+}
+.hide{
+	display: none;
+}
+.jumbotron{
+	margin: 0;
+	padding: 10px;
+}
+.thumbnail{
+	background-color: #fafafa;
+	border-radius: 10px;
+	margin: 10px 0;
+	padding: 20px;
+}
+.thumbnail img{
+	width: 50%;
+}
+img.center {
+    display: block;
+    margin: 0 auto;
+}
+.badge{
+	background-color: #fafafa;
+	color: #555;
+}
+/*COL-LG*/
+@media (min-width: 1200px){	
+	input{
+		width: 100px;
+	}
+
+}
+@media (min-width:992px){
+	#check, #new, #home{
+		font-size: 30px;
+		padding: 10px 0;
+	}
+	ul li{
+		font-size: 30px;
+	}
+	.alert{
+		width: 150px;
+	}
+}
+@media (min-width:768px){
+	#check, #new, #home{
+		width: 33%;
+	}
+}
+@media (min-width:480px){
+	#check, #new, #home{
+		width: 33%;
+	}
+}
+@media (max-width:480px){
+	#check, #new, #home{
+		width: 100%;
+		padding: 20px 0;
+	}
+	html{
+		height: 100%;
+		min-height: 100%;
+	}
+	body{
+		background: url('../img/back.jpg') no-repeat fixed;
+		min-height: 100%;
+		background-size: cover;
+		-webkit-background-size: cover;
+	  	-moz-background-size: cover;
+	  	-o-background-size: cover;
+	}
+}
