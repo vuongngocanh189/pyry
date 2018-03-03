@@ -52,12 +52,18 @@ function init(x){
 		$(this).html('');
 
 		//create random values and store results		
-		var number1 = Math.floor(Math.random() * x) + 1;
-		var number2 = Math.floor(Math.random() * x) + 1;
+		number1 = Math.floor(Math.random() * x) + 1;
+		number2 = Math.floor(Math.random() * x) + 1;
 		if (cal == "plus"){
 			correct_answers.push(number1+number2);
 		}
 		else if (cal == "minus"){
+			if(number2 > number1){
+				var z = number1;
+				number1 = number2;
+				number2 = z;
+				return number1, number2;
+			}
 			correct_answers.push(number1-number2);
 		}
 		else if (cal == "times") {
