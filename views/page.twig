@@ -11,13 +11,14 @@
 		  			<a href="{{ path_for('navbar', { 'cal' : cal, 'level': 'hard' }) }}" class="tab tab2">Hard</a>
 		  		</h6>
 		  		<input type="hide" class="hide level" value="{{ level }}">
-		  		<button id="check" class="btn btn-large btn-success"><i class="fas fa-check"></i> CHECK</button> 
- 			 	<button id="new" class="btn btn-large btn-info"><i class="fas fa-plus"></i> NEW</button>
- 			 	<button id="home" class="btn tbn-large btn-danger"><i class="fas fa-home"></i> HOME</button>
 	 		</div>
 			<div class="card-block">
-				<p class="card-text">Fill in the values, then click CHECK to see if your answers are correct.<br />
-					Solutions are not provided, but you can change the values and check again as many times as you want.</p>
+				<p class="card-text">Fill in the fields with your answers, then click CHECK to see if they are correct.<br />
+					You can change the questions by clicking NEW.<br />
+					Solutions are not provided, but you can change the answers and check again as many times as you want.</p>
+				<button id="check" class="btn btn-large btn-success"><i class="fas fa-check"></i> CHECK</button> 
+ 			 	<button id="new" class="btn btn-large btn-info"><i class="fas fa-plus"></i> NEW</button>
+ 			 	<button id="home" class="btn tbn-large btn-danger"><i class="fas fa-home"></i> HOME</button>
 		   		<ul id="cal-list" class="list-group list-group-flush center">
 					  <li class="list-group-item"></li>
 					  <li class="list-group-item"></li>
@@ -29,7 +30,7 @@
 			<div class="card-footer text-muted">
 				<a href="{{ path_for('navbar', { 'cal' : 'plus', 'level': 'easy' }) }}" class="tab tab3">PLUS</a> | 
 				<a href="{{ path_for('navbar', { 'cal' : 'minus', 'level': 'easy' }) }}" class="tab tab4">MINUS</a> | 
-				<a href="{{ path_for('navbar', { 'cal' : 'times', 'level': 'easy' }) }}" class="tab tab5">TIMES</a>
+				<a href="{{ path_for('navbar', { 'cal' : 'multiply', 'level': 'easy' }) }}" class="tab tab5">MULTIPLY</a>
 			</div>
 		</div>
 	</div>

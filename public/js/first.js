@@ -62,11 +62,12 @@ function init(x){
 				var z = number1;
 				number1 = number2;
 				number2 = z;
-				return number1, number2;
+				correct_answers.push(number1-number2);
+			}else{
+				correct_answers.push(number1-number2);
 			}
-			correct_answers.push(number1-number2);
 		}
-		else if (cal == "times") {
+		else if (cal == "multiply") {
 			correct_answers.push(number1 * number2);
 		}
 		else {
@@ -87,10 +88,10 @@ function check(x,y){
 	feedback = "";
 	$.each(x, function (i) {
 	    if(y[i] == x[i]){
-	    	feedback = "<i class='fas fa-check'></i>";
+	    	feedback = "<i class='far fa-smile'></i>";
 	    	$(".result-"+i).removeClass("alert-danger").addClass("alert-success");
 	    } else {
-	    	feedback = "<i class='fas fa-cross'></i>";
+	    	feedback = "<i class='far fa-frown'></i>";
 	    	$(".result-"+i).addClass("alert-danger");
 	    }   
 	    $(".result-"+i).html(feedback);

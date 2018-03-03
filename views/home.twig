@@ -6,7 +6,7 @@
 		width: 100%;
 		padding: 10px;
 		margin: 0;
-		border-radius: 20px;
+		border-radius: 30px;
 	}
 	</style>
 {% endblock %}
@@ -16,10 +16,10 @@
 		{% for method in cal_array %}
 		  <div class="col-sm-6 col-md-4">
 		    <div class="thumbnail">
-		      	<img src="img/{{ method }}.png" class="center" alt="plus math test" />
+		      	<img src="img/{{ method }}.png" class="center" alt="{{ method }} math test" />
 		      	<hr>
 		      	<div class="thumb-info">
-			        <h2 class="text-center">{{ method }}</h2>
+			        <h2 class="text-center">{{ method|upper }}</h2>
 			        <p><a href="{{ path_for('navbar', { 'cal' : method, 'level': 'easy' }) }}" class="btn btn-info" role="button" target="_blank">
 						Easy <span class="badge">1-9</a></p>
 					<p><a href="{{ path_for('navbar', { 'cal' : method, 'level': 'medium' }) }}" class="btn btn-success" role="button" target="_blank">
