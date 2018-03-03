@@ -2,19 +2,35 @@
 {% block title %}{{ cal|upper }} | {{ level|upper }} - Pyry Calculation Test{% endblock %}
 {% block content %}
 	<div class="container">
-		<div class="jumbotron" id="calculation">
-				<p class="level hide">{{ level }}</p>
-				<p class="cal hide">{{ cal }}</p>
-					<ul id="cal-list center">
-					  <li></li>
-					  <li></li>
-					  <li></li>
-					  <li></li>
-					  <li></li>
-					</ul>
-					<button id="check" class="btn btn-large btn-success"><i class="fas fa-check"></i> CHECK</button>
-					<button id="new" class="btn btn-large btn-info"><i class="fas fa-plus"></i> NEW</button>
-					<button id="home" class="btn tbn-large btn-danger"><i class="fas fa-home"></i> RETURN HOME</a>
+		<div class="card text-center">
+		  	<div class="card-header">
+		  		<h1 class="cal">{{ cal|upper }}</h6>
+		  		<h4 class="card-subtitle mb-2 text-muted">
+		  			<a href="{{ path_for('navbar', { 'cal' : cal, 'level': 'easy' }) }}" class="tab tab0">Easy</a> | 
+		  			<a href="{{ path_for('navbar', { 'cal' : cal, 'level': 'medium' }) }}" class="tab tab1">Medium</a> | 
+		  			<a href="{{ path_for('navbar', { 'cal' : cal, 'level': 'hard' }) }}" class="tab tab2">Hard</a>
+		  		</h6>
+		  		<input type="hide" class="hide level" value="{{ level }}">
+		  		<button id="check" class="btn btn-large btn-success"><i class="fas fa-check"></i> CHECK</button> 
+ 			 	<button id="new" class="btn btn-large btn-info"><i class="fas fa-plus"></i> NEW</button>
+ 			 	<button id="home" class="btn tbn-large btn-danger"><i class="fas fa-home"></i> HOME</button>
+	 		</div>
+			<div class="card-block">
+				<p class="card-text">Fill in the values, then click CHECK to see if your answers are correct.<br />
+					Solutions are not provided, but you can change the values and check again as many times as you want.</p>
+		   		<ul id="cal-list" class="list-group list-group-flush center">
+					  <li class="list-group-item"></li>
+					  <li class="list-group-item"></li>
+					  <li class="list-group-item"></li>
+					  <li class="list-group-item"></li>
+					  <li class="list-group-item"></li>
+				</ul>
+			</div>
+			<div class="card-footer text-muted">
+				<a href="{{ path_for('navbar', { 'cal' : 'plus', 'level': 'easy' }) }}" class="tab tab3">PLUS</a> | 
+				<a href="{{ path_for('navbar', { 'cal' : 'minus', 'level': 'easy' }) }}" class="tab tab4">MINUS</a> | 
+				<a href="{{ path_for('navbar', { 'cal' : 'times', 'level': 'easy' }) }}" class="tab tab5">TIMES</a>
+			</div>
 		</div>
 	</div>
 {% endblock %}

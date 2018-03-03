@@ -4,9 +4,15 @@
 	var x;
 	var level, cal;
 $(document).ready(function(){
-	level = $(".level").text();
-	cal = $(".cal").text();
-
+	level = $(".level").val().toLowerCase();
+	cal = $(".cal").text().toLowerCase();
+	//append .active to the submenu	
+	$(".tab").each(function (i){
+		if($(".tab"+i).text().toLowerCase() == level || $(".tab"+i).text().toLowerCase() == cal) {
+			$(this).toggleClass("active");
+		}
+	});
+	//take values from url
 	if (level == "easy"){
 		x = 9;
 	}
@@ -18,7 +24,6 @@ $(document).ready(function(){
 	}
 	//Fill in rows with numbers and calculate results, store results in an array and wait to compare with the input
 	init(x);
-
 	//click CHECK
 	$("#check").click(function(){
 		$(".alert").removeClass("hide");
@@ -40,7 +45,6 @@ $(document).ready(function(){
 		init(x);
 	});
 });
-
 //initialize values
 function init(x){
 	$("li").each(function (i) {
@@ -64,7 +68,7 @@ function init(x){
 		}
 	//fill in values
 	$(this).prepend("<span class='rand-number'>" + number1 + "</span>" + 
-			"<img src='../img/" + cal + ".png' width='50px'>" +
+			"<img src='../img/" + cal + ".png'>" +
 			"<span class='rand-number'>" + number2 + "</span> " +
 			"<img src='../img/equal.png' width='50px'> " +
 			"<input type='number' class='input'>" +
