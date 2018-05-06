@@ -6,9 +6,15 @@
 		  	<div class="card-header">
 		  		<h1 class="cal">{{ cal|upper }}</h6>
 		  		<h4 class="card-subtitle mb-2 text-muted">
+		  			Level: 
 		  			<a href="{{ path_for('navbar', { 'cal' : cal, 'level': 'easy' }) }}" class="tab tab0">Easy</a> | 
-		  			<a href="{{ path_for('navbar', { 'cal' : cal, 'level': 'medium' }) }}" class="tab tab1">Medium</a> | 
-		  			<a href="{{ path_for('navbar', { 'cal' : cal, 'level': 'hard' }) }}" class="tab tab2">Hard</a>
+		  			{% if cal != "division" %}
+		  				<a href="{{ path_for('navbar', { 'cal' : cal, 'level': 'medium' }) }}" class="tab tab1">Medium</a> | 
+					    <a href="{{ path_for('navbar', { 'cal' : cal, 'level': 'hard' }) }}" class="tab tab2">Hard</a>
+
+					{% elseif cal == "division" %}
+		  				<a href="{{ path_for('navbar', { 'cal' : cal, 'level': 'medium' }) }}" class="tab tab1">Medium</a>
+					{% endif %}
 		  		</h6>
 		  		<input type="hide" class="hide level" value="{{ level }}">
 	 		</div>
@@ -30,7 +36,8 @@
 			<div class="card-footer text-muted">
 				<a href="{{ path_for('navbar', { 'cal' : 'plus', 'level': 'easy' }) }}" class="tab tab3">PLUS</a> | 
 				<a href="{{ path_for('navbar', { 'cal' : 'minus', 'level': 'easy' }) }}" class="tab tab4">MINUS</a> | 
-				<a href="{{ path_for('navbar', { 'cal' : 'multiply', 'level': 'easy' }) }}" class="tab tab5">MULTIPLY</a>
+				<a href="{{ path_for('navbar', { 'cal' : 'multiply', 'level': 'easy' }) }}" class="tab tab5">MULTIPLY</a> |
+				<a href="{{ path_for('navbar', { 'cal' : 'division', 'level': 'easy' }) }}" class="tab tab6">DIVISION</a>
 			</div>
 		</div>
 	</div>

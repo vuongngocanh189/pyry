@@ -1,7 +1,7 @@
     var number1, number2, feedback;
 	var correct_answers = [];
 	var input_array = [];
-	var x;
+	var x, z;
 	var level, cal;
 $(document).ready(function(){
 	level = $(".level").val().toLowerCase();
@@ -59,7 +59,7 @@ function init(x){
 		}
 		else if (cal == "minus"){
 			if(number2 > number1){
-				var z = number1;
+				z = number1;
 				number1 = number2;
 				number2 = z;
 				correct_answers.push(number1-number2);
@@ -69,6 +69,11 @@ function init(x){
 		}
 		else if (cal == "multiply") {
 			correct_answers.push(number1 * number2);
+		}		
+		else if (cal == "division") {
+			z = number1 * number2;
+			correct_answers.push(z / number2);
+			number1 = z;
 		}
 		else {
 			//redirect to homepage

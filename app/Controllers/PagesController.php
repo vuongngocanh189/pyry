@@ -11,7 +11,7 @@ class PagesController extends Controller
 
 	public function index($request, $response)
 	{
-		$cal_array = ['plus', 'minus', 'multiply'];
+		$cal_array = ['plus', 'minus', 'multiply', 'division'];
 		return $this->view->render($response, 'home.twig', [
 			'cal_array' => $cal_array
 		]);
@@ -20,7 +20,7 @@ class PagesController extends Controller
 	{
 		$level = $request->getAttribute("level");
 		$cal = $request->getAttribute("cal");
-		if($cal == "plus" || $cal == "minus" || $cal == "multiply") 
+		if($cal == "plus" || $cal == "minus" || $cal == "multiply" || $cal == "division") 
 		{
 			if($level == "easy" || $level == "medium" || $level == "hard") {
 				return $this->view->render($response, 'page.twig', [
